@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F5F5F5;
     font-family: 'Roboto', sans-serif;
@@ -30,8 +34,9 @@ a:hover {
     color: white;
     padding-top: 70px;
     padding-bottom: 30px;
-    border-radius: 35px;
-    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.4);
+    /* border-radius: 35px; */
+    border-radius: 10px;
+    box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.4);
 }
 
 .fieldset {
@@ -43,7 +48,7 @@ label {
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 500;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
 input {
@@ -54,11 +59,12 @@ input {
     font-size: 24px;
     letter-spacing: 1.5px;
     box-sizing: border-box;
-    border-radius: 7px;
+    /* border-radius: 7px; */
+    border-radius: 4px;
     border: none;
     outline: none;
     background-color: #F5F5F5;
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 input:last-child {
@@ -66,9 +72,23 @@ input:last-child {
     margin-top: 50px;
 }
 
+input:hover {
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    
+    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 1px 0px rgba(0, 0, 0, 1);
+    /* background-color: #DDD; */
+    /* box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.7); */
+}
+
 input:focus {
-    background-color: #DDD;
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.7);
+    background-color: #fefefe;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 3px 0px rgba(0, 0, 0, 1);
+    /* border: 2px solid #8f242c; */
+}
+input:focus:hover {
+    border: none;
 }
 
 input[type=submit] {
@@ -79,12 +99,12 @@ input[type=submit] {
     color: white;
     font-weight: bold;
     background-color: #0E111C;
-    border-radius: 15px;
+    border-radius: 7px;
 }
 
 input[type=submit]:hover {
     background-color: #22242c;
-    color: #e4838b;
+    /* color: #e4838b; */
 }
 
 .center {
