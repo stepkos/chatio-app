@@ -21,6 +21,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/leftMenu.css') }}" type="text/css">
 
+    @yield('head')
+
 </head>
 <body>
 
@@ -33,6 +35,8 @@
 
             <!-- <div id='profile-picture' style='background-image: url(data:image/jpg;base64,$profile_picture)'></div> -->
             <!-- <div id="profile-picture" style="background-image: url(data:image/jpg;base64,{{ asset('images/default-avatar.png') }})"></div> -->
+            
+            <!-- <div id="profile-picture" style="background-image: url({{ asset('images/unknown-picture.jpg') }})"></div> -->
             <div id="profile-picture" style="background-image: url({{ asset('images/default-avatar.png') }})"></div>
             
 
@@ -64,14 +68,14 @@
 
         <ul id="option-list">
 
-            <a href="#">
+            <a href="/home">
                 <li class="menu-option">
                     <span class="material-icons option-icons"> home</span>
                     <span class="option-text">Home</span>
                 </li>
             </a>
             
-            <a href="#">
+            <a href="/chat">
                 <li class="menu-option">
                     <span class="material-icons option-icons">chat</span>
                     <span class="option-text">Chat</span>
