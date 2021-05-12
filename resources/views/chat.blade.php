@@ -22,7 +22,7 @@
                             <img src="{{ asset('images/search.svg')}}" alt="lupa">
                         </div>
 
-                        <div style="clear: both;"></div>
+                        <div class="clb"></div>
                     </header>
 
                     <div class="person">
@@ -89,40 +89,40 @@
                 <div class="chat">
 
                     <div class="sent">Lorem</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="sent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quam!</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Adipisicing elit</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut explicabo, neque voluptate unde rerum et non reiciendis amet. Quidem, libero.</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="sent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, corporis.</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque maiores soluta saepe excepturi reprehenderit accusamus necessitatibus id praesentium minus eum illum, ea incidunt commodi dolorem quis modi officia beatae asperiores dicta ipsum.</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="sent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus rerum quasi placeat?</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="sent">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Sit amet</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam exercitationem expedita magnam veritatis fuga cum debitis consectetur!</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="sent">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium aspernatur vitae explicabo architecto molestiae qui quidem pariatur nesciunt laboriosam facere?</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                     <div class="received">Lorem ipsum dolor sit amet consectetur.</div>
-                    <div style="clear: both;"></div>
+                    <div class="clb"></div>
 
                 </div>
 
@@ -142,7 +142,7 @@
             </div>
         </section>
 
-        <section style="clear: both;"></section>
+        <section class="clb"></section>
 
     </main>
 

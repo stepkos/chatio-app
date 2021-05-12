@@ -182,7 +182,7 @@ main>section {
     overflow-y: auto;
 }
 
-.chat>div[class] {
+.chat>div:not(.clb) {
     font-size: 20px;
     padding: 10px;
     border-radius: 15px;
@@ -247,4 +247,8 @@ main>section {
 
 .fieldSet input[type=submit]:hover {
     background-color: black;
+}
+
+.clb {
+    clear: both;
 }
