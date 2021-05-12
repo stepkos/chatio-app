@@ -1,77 +1,66 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ asset('css/auth/forms.css') }}" type="text/css">
+</head>
+<body>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <header>
+        <h1>Register</h1>
+    </header>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <main>
+        <article>
+            <div class="container">
+                <form method="POST">
+                    <div class="fieldset">
+    
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                        <?= (isset($_SESSION['form_email'])) ? 'value = "'.$_SESSION['form_email'].'"' : '' ?>>
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name"
+                        <?= (isset($_SESSION['form_name'])) ? 'value = "'.$_SESSION['form_name'].'"' : '' ?>>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname"
+                        <?= (isset($_SESSION['form_surname'])) ? 'value = "'.$_SESSION['form_surname'].'"' : '' ?>>
+            
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                        <label for="confirm_password">Confirm password</label>
+                        <input type="password" id="confirm_password" name="confirm_password">
+                        
+                        <div class="center">
+                            <input type="submit" value="Register">
+                        </div>
+                        
+                        <div class="center pt">
+                            <a href="login">Login if you already have account</a>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </fieldset>
+                </form>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+        </article>
+    </main>
+
+
+    <script src="static/javascript/error.js"></script>
+    <script>
+        <?= (isset($_SESSION['form_error_email'])) ? 'error("email", "'.$_SESSION['form_error_email'].'");' : '' ?>
+        <?= (isset($_SESSION['form_error_name'])) ? 'error("name", "'.$_SESSION['form_error_name'].'");' : '' ?>
+        <?= (isset($_SESSION['form_error_surname'])) ? 'error("surname", "'.$_SESSION['form_error_surname'].'");' : '' ?>
+        <?= (isset($_SESSION['form_error_password'])) ? 'error("password", "'.$_SESSION['form_error_password'].'");' : '' ?>
+        <?= (isset($_SESSION['form_error_confirm_password'])) ? 'error("confirm_password", "'.$_SESSION['form_error_confirm_password'].'");' : '' ?>
+    </script>
+
+
+</body>
+</html>
