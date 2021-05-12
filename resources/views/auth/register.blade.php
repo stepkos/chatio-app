@@ -15,27 +15,49 @@
     <main>
         <article>
             <div class="container">
-                <form method="POST">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+
                     <div class="fieldset">
     
+                        <label for="name">Name</label>
+                        <input
+                            type="text"  
+                            id="name"  
+                            name="name" 
+                            value="{{ old('name') }}" 
+                            required 
+                            autocomplete="name" 
+                            autofocus 
+                        >
                         
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email"
-                        <?= (isset($_SESSION['form_email'])) ? 'value = "'.$_SESSION['form_email'].'"' : '' ?>>
-
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name"
-                        <?= (isset($_SESSION['form_name'])) ? 'value = "'.$_SESSION['form_name'].'"' : '' ?>>
-
-                        <label for="surname">Surname</label>
-                        <input type="text" id="surname" name="surname"
-                        <?= (isset($_SESSION['form_surname'])) ? 'value = "'.$_SESSION['form_surname'].'"' : '' ?>>
+                        <input
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            value="{{ old('email') }}"  
+                            required 
+                            autocomplete="email"
+                        >
             
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password">
+                        <input 
+                            type="password"  
+                            id="password"  
+                            name="password" 
+                            required  
+                            autocomplete="new-password" 
+                        >
 
                         <label for="confirm_password">Confirm password</label>
-                        <input type="password" id="confirm_password" name="confirm_password">
+                        <input 
+                            type="password" 
+                            id="confirm_password" 
+                            name="password_confirmation" 
+                            required 
+                            autocomplete="new-password"
+                        >
                         
                         <div class="center">
                             <input type="submit" value="Register">

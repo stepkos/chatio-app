@@ -15,16 +15,64 @@
     <main>
         <article>
             <div class="container">
-                <form method="POST">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
                     <div class="fieldset">
     
-                        
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email"
-                        <?= (isset($_SESSION['form_email'])) ? 'value = "'.$_SESSION['form_email'].'"' : '' ?>>
+
+                        <input
+                            type="email"
+                            id="email" 
+                            name="email"
+                            value="{{ old('email') }}"
+                            required
+                            autocomplete="email"
+                            autofocus
+                        >
             
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password">
+
+                        <input 
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                            autocomplete="current-password"
+                        >
+
+                        <!-- temp -->
+                        <!-------------------------------------->
+                        
+                        <!-- @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            
+                            
+                            <input
+                            type="checkbox"
+                            name="remember"
+                            id="remember"
+                            {{ old('remember') ? 'checked' : '' }}
+                            >
+                            
+                            <label for="remember">
+                                Remember Me
+                            </label> -->
+                            
+                        <!-------------------------------------->
+                        <!-- temp -->
+
+
                         
                         <div class="center">
                             <input type="submit" value="Log in">
