@@ -45,19 +45,7 @@
                         <!-- temp -->
                         <!-------------------------------------->
                         
-                        <!-- @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                            
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                            
-                            
+                        <!--
                             <input
                             type="checkbox"
                             name="remember"
@@ -88,10 +76,19 @@
         </article>
     </main>
 
-    <script src="static/javascript/error.js"></script>
-    <script>
-        <?= (isset($_SESSION['form_error_email'])) ? 'error("email", "'.$_SESSION['form_error_email'].'");' : '' ?>
-    </script>
+    <script src="{{ asset('js/auth/error.js') }}"></script>
+
+    @error('email')
+        <script>
+            error("email", "{{ $message }}");
+        </script>    
+    @enderror
+
+    @error('password')
+        <script>
+            error("password", "{{ $message }}");
+        </script>    
+    @enderror
 
 </body>
 </html>

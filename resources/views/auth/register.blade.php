@@ -74,15 +74,25 @@
     </main>
 
 
-    <script src="static/javascript/error.js"></script>
-    <script>
-        <?= (isset($_SESSION['form_error_email'])) ? 'error("email", "'.$_SESSION['form_error_email'].'");' : '' ?>
-        <?= (isset($_SESSION['form_error_name'])) ? 'error("name", "'.$_SESSION['form_error_name'].'");' : '' ?>
-        <?= (isset($_SESSION['form_error_surname'])) ? 'error("surname", "'.$_SESSION['form_error_surname'].'");' : '' ?>
-        <?= (isset($_SESSION['form_error_password'])) ? 'error("password", "'.$_SESSION['form_error_password'].'");' : '' ?>
-        <?= (isset($_SESSION['form_error_confirm_password'])) ? 'error("confirm_password", "'.$_SESSION['form_error_confirm_password'].'");' : '' ?>
-    </script>
+    <script src="{{ asset('js/auth/error.js') }}"></script>
 
+    @error('name')
+        <script>
+            error("name", "{{ $message }}");
+        </script>    
+    @enderror
+
+    @error('email')
+        <script>
+            error("email", "{{ $message }}");
+        </script>    
+    @enderror
+
+    @error('password')
+        <script>
+            error("password", "{{ $message }}");
+        </script>    
+    @enderror
 
 </body>
 </html>
