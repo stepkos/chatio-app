@@ -104,7 +104,7 @@ main>section {
     background-repeat: no-repeat;
 }
 
-.owner {
+.active {
     position: absolute;
     right: 1.3vw;
     width: 20px;
@@ -164,7 +164,7 @@ main>section {
     background-repeat: no-repeat;
 }
 
-.right>header .owner {
+.right>header .active {
     right: 3vw;
     width: 30px;
     height: 30px;
