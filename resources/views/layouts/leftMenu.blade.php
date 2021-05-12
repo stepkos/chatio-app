@@ -32,6 +32,8 @@
         <section id="user-section">
 
             <!-- <div id='profile-picture' style='background-image: url(data:image/jpg;base64,$profile_picture)'></div> -->
+            <!-- <div id="profile-picture" style="background-image: url(data:image/jpg;base64,{{ asset('images/default-avatar.png') }})"></div> -->
+            <div id="profile-picture" style="background-image: url({{ asset('images/default-avatar.png') }})"></div>
             
 
             <h1 id="user-name-text">
@@ -46,8 +48,8 @@
 
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"
-            >
+                    document.getElementById('logout-form').submit();">
+
                 <div id="logOut">
                     Log out
                 </div>
