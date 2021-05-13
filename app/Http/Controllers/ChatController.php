@@ -16,10 +16,8 @@ class ChatController extends Controller {
         
 
         // jesli jeszcze z nikim nie pisales wez konfe z kim kolwiek
-        if ($lastSent == null || $lastRecived == null) {
-            $tmpId = User::first()->id;
-            return redirect("/chat/$tmpId");
-        }
+        if ($lastSent == null || $lastRecived == null)
+            return redirect("/chat/0");
 
         $tmpId = $lastRecived['user_sender_id'];
         if ($lastRecived['updated_at'] > $lastSent['updated_at'])
@@ -29,16 +27,22 @@ class ChatController extends Controller {
     }
     
     public function show($chat) {
+
+        $userID = auth()->user()->id;
+        $users = User::all();
         
+        if ($chat == 0)
+            return view('chat', compact('userID', 'users', 'chat'));
+        
+        $userRecipient = User::find($chat);
+            
+            
         $messagesSent = auth()->user()->messagesSent()->where('user_recipient_id', $chat)->get()->toArray();
         $messagesReceived = auth()->user()->messagesReceived()->where('user_sender_id', $chat)->get()->toArray();
 
         $messages = collect(array_merge($messagesSent, $messagesReceived))->sortBy('updated_at');
 
-        $userID = auth()->user()->id;
-        $users = User::all();
-        $userRecipient = User::find($chat);
-        return view('chat', compact('messages', 'userID', 'users', 'userRecipient'));
+        return view('chat', compact('messages', 'userID', 'users', 'userRecipient', 'chat'));
     }
 
     public function store(Request $request, $chat) {
