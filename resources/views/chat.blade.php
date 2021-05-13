@@ -25,46 +25,23 @@
                         <div class="clb"></div>
                     </header>
 
-                    <div class="person">
 
-                        <div>
-                            <img src="{{ asset('images/john.png')}}" alt="profile picture">
-                        </div>
-
-                        <div class="info">
-                            <h2>Kacper Nowak</h2>
-                            <h3>Project Manager</h3>
-                        </div>
-
-                        <div class="active"></div>
-
-                    </div>
-
-                    <div class="person">
-
-                        <div>
-                            <img src="{{ asset('images/john.jpg')}}" alt="profile picture">
-                        </div>
-
-                        <div class="info">
-                            <h2>Patryk Okrasa</h2>
-                            <h3>Back-End Developer</h3>
-                        </div>
-
-                    </div>
-
-                    <div class="person">
-
-                        <div>
-                            <img src="{{ asset('images/pitt.jpg')}}" alt="profile picture">
-                        </div>
-
-                        <div class="info">
-                            <h2>Adam Słowiński</h2>
-                            <h3>Marketing Manager</h3>
-                        </div>
-
-                    </div>
+                    @foreach($users as $specUser)
+                        <a href="/chat/{{ $specUser['id'] }}">
+                            <div class="person">
+                                <div>
+                                    <img src="{{ asset('images/default-avatar.png') }}" alt="profile picture">
+                                </div>
+    
+                                <div class="info">
+                                    <h2>{{ $specUser['name'] }}</h2>
+                                    <h3>{{ $specUser['email'] }}</h3>
+                                </div>
+    
+                                <!-- <div class="active"></div> -->
+                            </div>
+                        </a>
+                    @endforeach
 
                 </nav>
             </div>
@@ -79,55 +56,36 @@
                     </div>
 
                     <div class="info">
-                        <h2>Kacper Nowak</h2>
-                        <h3>Project Manager</h3>
+                        <h2>{{ $userRecipient['name'] }}</h2>
+                        <h3>{{ $userRecipient['email'] }}</h3>
                     </div>
 
-                    <div class="active"></div>
+                    <!-- <div class="active"></div> -->
                 </header>
 
                 <div class="chat">
 
-                    <div class="sent">Lorem</div>
-                    <div class="clb"></div>
+                    @foreach($messages as $message)
 
-                    <div class="sent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quam!</div>
-                    <div class="clb"></div>
+                        @if ($message['user_sender_id'] == $userID )
 
-                    <div class="received">Adipisicing elit</div>
-                    <div class="clb"></div>
+                            <div class="sent">{{ $message['message'] }}</div>
+                            <div class="clb"></div>
 
-                    <div class="received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut explicabo, neque voluptate unde rerum et non reiciendis amet. Quidem, libero.</div>
-                    <div class="clb"></div>
+                        @else
 
-                    <div class="sent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, corporis.</div>
-                    <div class="clb"></div>
+                            <div class="received">{{ $message['message'] }}</div>
+                            <div class="clb"></div>
 
-                    <div class="received">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque maiores soluta saepe excepturi reprehenderit accusamus necessitatibus id praesentium minus eum illum, ea incidunt commodi dolorem quis modi officia beatae asperiores dicta ipsum.</div>
-                    <div class="clb"></div>
+                        @endif
 
-                    <div class="sent">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus rerum quasi placeat?</div>
-                    <div class="clb"></div>
-
-                    <div class="sent">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                    <div class="clb"></div>
-
-                    <div class="received">Sit amet</div>
-                    <div class="clb"></div>
-
-                    <div class="received">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam exercitationem expedita magnam veritatis fuga cum debitis consectetur!</div>
-                    <div class="clb"></div>
-
-                    <div class="sent">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium aspernatur vitae explicabo architecto molestiae qui quidem pariatur nesciunt laboriosam facere?</div>
-                    <div class="clb"></div>
-
-                    <div class="received">Lorem ipsum dolor sit amet consectetur.</div>
-                    <div class="clb"></div>
+                    @endforeach
 
                 </div>
 
                 <div class="type">
                     <form method="POST">
+                        @csrf
 
                         <div class="fieldSet">
 
