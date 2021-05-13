@@ -56,7 +56,7 @@
 
                     <header>
                         <div>
-                            <img src="{{ asset('images/john.png')}}" alt="profile picture">
+                            <img src="{{ asset('images/default-avatar.png')}}" alt="profile picture">
                         </div>
 
                         <div class="info">
