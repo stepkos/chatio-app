@@ -73,7 +73,7 @@ main>section {
 }
 
 .person:hover {
-    box-shadow: 0 0 15px 0 rgb(68, 68, 68);
+    box-shadow: 0 0 12px 0 rgb(68, 68, 68);
 }
 
 .person>div {
@@ -178,14 +178,15 @@ main>section {
     top: 120px;
     box-sizing: border-box;
     padding: 20px;
+    padding-right: 30px;
     /* background-color: red; */
     overflow-y: auto;
 }
 
 .chat>div:not(.clb) {
     font-size: 20px;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 10px 15px;
+    border-radius: 12px;
     max-width: 60%;
     margin-bottom: 13px;
     line-height: 130%;
@@ -195,6 +196,7 @@ main>section {
 .chat .sent {
     float: right;
     background-color: #E63946;
+    color: white;
 }
 
 .chat .received {
@@ -211,27 +213,29 @@ main>section {
 }
 
 .fieldSet {
-    margin-left: 2.3vw;
+    display: block;
+    margin-left: 0.5vw;
+    padding: 25px;
 }
 
 .fieldSet input[type=text] {
     width: 40vw;
     height: 40px;
-    padding: 3px;
-    margin: 1.4vh 0;
+    padding: 3px 10px;
+    /* margin: 2.2vh 0; */
     font-size: 22px;
-    border-radius: 7px;
+    border-radius: 15px;
     border: none;
     outline: none;
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .fieldSet input[type=text]:focus {
-    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.6);
 }
 
 .fieldSet input[type=submit] {
-    margin-left: 5px;
+    margin-left: 6px;
     width: 70px;
     height: 40px;
     letter-spacing: 2px;
@@ -251,4 +255,22 @@ main>section {
 
 .clb {
     clear: both;
+}
+
+.type img {
+    width: 46px;
+}
+
+.fieldSet div {
+    float: left;
+    margin-left: 10px;
+}
+
+.fieldSet div.icon {
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+}
+
+.fieldSet div.icon:hover {
+    transform: rotate(45deg);
 }

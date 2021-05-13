@@ -88,13 +88,22 @@
                     </div>
 
                     <div class="type">
-                        <form method="POST">
+                        <form method="POST" id="formId">
                             @csrf
 
                             <div class="fieldSet">
 
-                                <input type="text" name="message">
-                                <input type="submit" value="Send">
+                                <div>
+                                    <input type="text" name="message" autofocus>
+                                    <!-- <input type="submit" value="Send"> -->
+                                </div>
+                                
+                                <div class="icon" onclick="document.getElementById('formId').submit();">
+                                    <img src="{{ asset('images/ios-send.png') }}" alt="send">
+                                </div>
+
+                                <div class="clb"></div>
+                                
 
                             </div>
 
