@@ -3,6 +3,7 @@
 @section('head')
 
     <link href="{{ asset('css/chat.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/scrollToLastMessage.js') }}"></script>
 
 @endsection
 
