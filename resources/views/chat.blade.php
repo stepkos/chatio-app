@@ -39,7 +39,7 @@
                                     <h3>{{ $specUser['email'] }}</h3>
                                 </div>
     
-                                <!-- <div class="active"></div> -->
+                                <div class="active"></div>
                             </div>
                         </a>
                     @endforeach
@@ -64,7 +64,7 @@
                             <h3>{{ $userRecipient['email'] }}</h3>
                         </div>
 
-                        <!-- <div class="active"></div> -->
+                        <div class="active"></div>
                     </header>
 
                     <div class="chat">
