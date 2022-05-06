@@ -215,6 +215,8 @@ main>section {
 .fieldSet {
     display: block;
     margin-left: 0.5vw;
+    position: relative;
+    top: -15px;
     padding: 29px;
 }
 
